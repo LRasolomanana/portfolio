@@ -1,0 +1,233 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(90deg, #1e1e1e, #333);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            animation: slideDown 1s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 1rem;
+            animation: fadeInUp 0.5s ease-out forwards;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+        nav ul li:nth-child(1) { --i: 1; }
+        nav ul li:nth-child(2) { --i: 2; }
+        nav ul li:nth-child(3) { --i: 3; }
+        nav ul li:nth-child(4) { --i: 4; }
+        nav ul li:nth-child(5) { --i: 5; }
+        nav ul li:nth-child(6) { --i: 6; }
+        nav ul li:nth-child(7) { --i: 7; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: #00bcd4;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #00bcd4;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            background-attachment: fixed; /* Parallax effect */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+            z-index: 1;
+        }
+        section > .container {
+            position: relative;
+            z-index: 2;
+        }
+        #accueil {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%), url('https://via.placeholder.com/1920x1080/000000/ffffff?text=Hero+Image') no-repeat center;
+        }
+        #bts-sio {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        #projet {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        #tp {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        #veille {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        #certification {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        #documents {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: bounceIn 1s ease-out;
+            margin-bottom: 2rem;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 {
+            font-size: 3rem;
+            margin-top: 2rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .project, .tp, .certification {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .project:hover, .tp:hover, .certification:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .project i, .tp i, .certification i {
+            font-size: 2rem;
+            color: #00bcd4;
+        }
+        .project h3, .tp h3, .certification h3 {
+            margin: 0;
+            color: #ffffff;
+        }
+        .project p, .tp p, .certification p {
+            margin: 0.5rem 0;
+        }
+        .project a, .tp a, .certification a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .project a:hover, .tp a:hover, .certification a:hover {
+            color: #ffffff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        ul li:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(90deg, #1e1e1e, #333);
+            color: #ffffff;
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .project, .tp, .certification {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
