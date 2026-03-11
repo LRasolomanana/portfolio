@@ -97,25 +97,26 @@ body {
             z-index: 2;
         }
         #accueil {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%), url('https://via.placeholder.com/1920x1080/000000/ffffff?text=Hero+Image') no-repeat center;
+            background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%), url('https://via.placeholder.com/1920x1080/000000/ffffff?text=Hero+Image') no-repeat center;
+        }
+        #a-propos-moi{
+            background: linear-gradient(#c471f5 0%, #b334fc 100%);
         }
         #bts-sio {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(#b334fc 0%,#c665fd 100%);
         }
+        
         #projet {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-        #tp {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            background: linear-gradient(#c665fd 0%, #d188fa 100%);
         }
         #veille {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: linear-gradient(#d188fa 0%, #d79cf9 100%);
         }
         #certification {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            background: linear-gradient(#d79cf9 0%, #ddaff8 100%);
         }
         #documents {
-            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+            background: linear-gradient(#ddaff8 0%, #f3defe 100%);
         }
         .container {
             max-width: 1200px;
@@ -230,4 +231,67 @@ body {
                 flex-direction: column;
                 text-align: center;
             }
+            /* Container pour les deux blocs */
+.options-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+/* Style individuel des cartes SLAM et SISR */
+.option-card {
+    flex: 1; /* Les deux blocs prennent la même largeur */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.option-card h3 {
+    color: #00bcd4;
+    margin-bottom: 5px;
+    text-align: left; /* Aligné à gauche pour les blocs */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-card .subtitle {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #eee;
+}
+
+.option-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.option-card ul li {
+    background: none; /* On enlève le fond gris des li standards pour ces blocs */
+    padding: 5px 0;
+    font-size: 0.95rem;
+    border-radius: 0;
+}
+
+.option-card ul li:hover {
+    background: none; /* On désactive le hover standard sur les listes ici */
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    .options-container {
+        flex-direction: column;
+    }
+}
         }

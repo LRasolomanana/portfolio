@@ -6,6 +6,7 @@
     <title>Mon Portfolio - BTS SIO</title>
     <link href="CSS/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Font Awesome for icons -->
+    
 </head>
 <body>
     <header>
@@ -15,7 +16,6 @@
                 <li><a href="#a-propos-moi"><i class="fas fa-graduation-cap"></i>a propos de moi</a></li>
                 <li><a href="#bts-sio"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
                 <li><a href="#projet"><i class="fas fa-project-diagram"></i> Projet</a></li>
-                <li><a href="#tp"><i class="fas fa-tools"></i> TP</a></li>
                 <li><a href="#veille"><i class="fas fa-eye"></i> Veille</a></li>
                 <li><a href="#certification"><i class="fas fa-certificate"></i> Certification</a></li>
                 <li><a href="#documents"><i class="fas fa-file-download"></i> Documents</a></li>
@@ -27,37 +27,57 @@
             <h1><i class="fas fa-user"></i> Bienvenue sur mon Portfolio</h1>
             <h2>Léo RASOLOMANANA</h2>
             <p>Je suis un étudiant en BTS SIO, passionné par l'informatique. Découvrez mes projets, travaux pratiques, et plus encore !</p>
-            <p>Contact : leo.rasolomanana@gmail.com | LinkedIn : [https://www.linkedin.com/in/l%C3%A9o-rasolomanana-5827102a4/]</p> <br>
+            <p>Contact : leo.rasolomanana@gmail.com | <a href="https://www.linkedin.com/in/l%C3%A9o-rasolomanana-5827102a4/]" style="color: pink;">Linkedin</a> | <a href="https://github.com/LRasolomanana" style="color: pink;">github</a> | <a href="https://www.instagram.com/leonicolasrsl/" style="color: pink;">instagram</a><br>
             <a href="#a-propos-moi" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: #00bcd4; color: #ffffff; border-radius: 25px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Explorer</a>
         </div>
     </section>
 
     <section id="a-propos-moi">
         <div class="container">
-            <h2><i class="fas fa-graduation-cap"></i>A propo de moi</h2>
+            <h2><i class="fas fa-graduation-cap"></i>A propos de moi</h2>
             <h2>Parcours scolaire</h2>
                     <li><i>BAC PRO SYSTEME NUMERIQUE</i></li>
                     <li><i>BTS SIO SLAM</i></li>
                 </div> <br>
-                <div>
-                    <h2>Competences</h2>
-                    <li><i></i></li>
-                    <li><i></i></li>
-                </div>
+            <div class="container">
+            </div>
         </div>
     </section>
 
-    <section id="bts-sio">
-        <div class="container">
-            <h2><i class="fas fa-graduation-cap"></i> BTS SIO (Services Informatiques aux Organisations)</h2>
-            <p>Le BTS SIO est une formation en informatique axée sur les services informatiques. Il comprend deux options : SISR (Solutions d'Infrastructure, Systèmes et Réseaux) et SLAM (Solutions Logicielles et Applications Métiers).</p>
-            <ul>
-                <li><i class="fas fa-code"></i> Compétences clés : Développement web, réseaux, cybersécurité, gestion de projets.</li>
-                <li><i class="fas fa-clock"></i> Durée : 2 ans, alternance possible.</li>
-                <li><i class="fas fa-briefcase"></i> Objectif : Préparer à des métiers comme développeur, administrateur système, ou technicien informatique.</li>
-            </ul>
+   <section id="bts-sio">
+    <div class="container">
+        <h2><i class="fas fa-graduation-cap"></i> BTS SIO (Services Informatiques aux Organisations)</h2>
+        <p>Le BTS SIO est une formation en informatique axée sur les services informatiques. Il comprend deux options : SISR et SLAM.</p>
+        
+        <ul class="sio-info-list">
+            <li><i class="fas fa-code"></i> <b>Compétences clés :</b> Développement web, réseaux, cybersécurité, gestion de projets.</li>
+            <li><i class="fas fa-clock"></i> <b>Durée :</b> 2 ans, alternance possible.</li>
+            <li><i class="fas fa-briefcase"></i> <b>Objectif :</b> Préparer à des métiers comme développeur, administrateur système, ou technicien informatique.</li>
+        </ul>
+        <br>
+        <div class="options-container">
+            <div class="option-card">
+                <h3><i class="fas fa-laptop-code"></i> Option SLAM</h3>
+                <p class="subtitle">Solutions Logicielles et Applications Métiers</p>
+                <ul>
+                    <li><b>Focus :</b> Développement, bases de données, applications mobiles.</li>
+                    <li><b>Langages :</b> Java, PHP, C#, SQL, JavaScript.</li>
+                    <li><b>Métiers :</b> Développeur, Analyste programmeur.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="option-card">
+                <h3><i class="fas fa-network-wired"></i> Option SISR</h3>
+                <p class="subtitle">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                <ul>
+                    <li><b>Focus :</b> Administration réseaux, serveurs, cybersécurité.</li>
+                    <li><b>Technos :</b> Cisco, Windows/Linux Server, VMware.</li>
+                    <li><b>Métiers :</b> Administrateur réseau, Technicien support.</li>
+                </ul>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="projet">
         <div class="container">
@@ -97,40 +117,7 @@
                 <p>devellopement d'une plateforme echec</p>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <section id="tp">
-        <div class="container">
-            <h2><i class="fas fa-tools"></i> Travaux Pratiques (TP)</h2>
-            <div class="tp">
-                <i class="fas fa-server"></i>
-                <div>
-                    <h3>TP 1 : </h3>
-                    <p></p>
-                </div>
-            </div>
-            <div class="tp">
-                <i class="fas fa-network-wired"></i>
-                <div>
-                    <h3>TP 2 : </h3>
-                    <p></p>
-                </div>
-            </div>
-            <div class="tp">
-                <i class="fas fa-network-wired"></i>
-                <div>
-                    <h3>TP 3 : </h3>
-                    <p></p>
-                </div>
-            </div>
-            <div class="tp">
-                <i class="fas fa-network-wired"></i>
-                <div>
-                    <h3>TP  : </h3>
-                    <p></p>
-                </div>
-            </div>
+            <li><i class="fas fa-file-alt"></i> <a href="#">syntheses de Stages.pdf</a></li>
         </div>
     </section>
 
@@ -142,6 +129,13 @@
                 <li><i class="fas fa-robot"></i></li>
                 <li><i class="fas fa-shield-alt"></i></li>
                 <li><i class="fas fa-rss"></i></li>
+            </ul>
+
+            <h2><i class="fas fa-eye"></i> Veille Cyber</h2>
+            <ul>
+            <li><i class="fas fa-robot"></i></li>
+            <li><i class="fas fa-shield-alt"></i></li>
+            <li><i class="fas fa-rss"></i></li>
             </ul>
         </div>
     </section>
@@ -200,8 +194,9 @@
             <p>Téléchargez mes documents clés :</p>
             <ul>
                 <li><i class="fas fa-file-pdf"></i> <a href="docs/CV léo FR.pdf (1).pdf">CV.pdf</a></li>
-                <li><i class="fas fa-file-alt"></i> <a href="#">syntheses de Stages.pdf</a></li>
-                <li><i class="fas fa-certificate"></i> <a href="#" download>Certificat BTS.pdf</a></li>
+                <li><i class="fas fa-file-pdf"></i> <a href="docs/Modèle_attestation_de_stage_SIO_2025 Léo Rasolomanana.pdf">attestation de stage</a></li>
+                <li><i class="fas fa-file-pdf"></i> <a href="docs/Modèle_attestation_de_stage_SIO_2025(Annexe_9)_(1)_(1).pdf">attestation de stage</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="#" download>Tableau de competence.pdf</a></li>
             </ul>
         </div>
     </section>
