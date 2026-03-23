@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Cyber XSS | Léo Rasolomanana</title>
+    <link href="CSS/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="index.html#veille"><i class="fas fa-arrow-left"></i> Retour</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section style="margin-top: 100px;">
+        <div class="container">
+            <h1><i class="fas fa-user-shield"></i> Veille Cyber : Failles Cross-Site Scripting (XSS)</h1>
+            <p class="intro">Analyse d'une des vulnérabilités les plus répandues du web (OWASP Top 10).</p>
+            
+            <div class="veille-content">
+                <div class="veille-box highlight-cyber">
+                    <h3><i class="fas fa-bug"></i> Comprendre la menace</h3>
+                    <p>La faille XSS consiste à injecter des scripts malveillants dans des pages web consultées par d'autres utilisateurs. Cela peut mener au vol de cookies de session ou à la redirection vers des sites de phishing.</p>
+                </div>
+
+                <h3><i class="fas fa-search"></i> Sources de Veille</h3>
+                <div class="outils-veille">
+                    <span class="badge">ANSSI</span>
+                    <span class="badge">PortSwigger (Burp Suite)</span>
+                    <span class="badge">OWASP</span>
+                    <span class="badge">Zataz</span>
+                </div>
+
+                <h3><i class="fas fa-shield-alt"></i> Mesures de Protection</h3>
+                <table style="width:100%; margin-top: 20px; border-collapse: collapse;">
+                    <tr style="background-color: #333; color: white;">
+                        <th style="padding: 10px; border: 1px solid #444;">Type XSS</th>
+                        <th style="padding: 10px; border: 1px solid #444;">Description</th>
+                        <th style="padding: 10px; border: 1px solid #444;">Remédiation</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #444;">Stockée</td>
+                        <td style="padding: 10px; border: 1px solid #444;">Script enregistré en BDD (ex: commentaires).</td>
+                        <td style="padding: 10px; border: 1px solid #444;">Sanitization des entrées.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #444;">Réfléchie</td>
+                        <td style="padding: 10px; border: 1px solid #444;">Script passé via une URL.</td>
+                        <td style="padding: 10px; border: 1px solid #444;">Encodage des sorties HTML.</td>
+                    </tr>
+                </table>
+
+                <p style="margin-top: 20px;"><strong>Conclusion :</strong> Ma veille montre que l'implémentation d'une politique de sécurité de contenu (CSP) reste la défense la plus robuste contre ces attaques.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Léo Rasolomanana - Veille Cyber</p>
+    </footer>
+</body>
+</html>
