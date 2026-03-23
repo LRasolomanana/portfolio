@@ -251,3 +251,12 @@ footer {
 .highlight-ai i {
     color: #fa71cd;
 }
+
+.certif-category-title {
+    color: #ffffff;
+    border-left: 4px solid #00bcd4;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
