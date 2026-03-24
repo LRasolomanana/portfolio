@@ -195,22 +195,22 @@ footer {
 
 /* Style des petits badges de compétences */
 .badge {
-    background: rgba(0, 188, 212, 0.1);
+    background: rgba(196, 113, 245, 0.1); /* Fond violet très léger */
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: bold;
-    border: 1px solid #00bcd4;
-    color: #00bcd4;
+    border: 1px solid #c471f5; /* Bordure violette */
+    color: #ffffff; /* Texte en blanc pour une meilleure lisibilité sur le violet */
     transition: all 0.3s ease;
 }
 
 .badge:hover {
-    background: #00bcd4;
+    background: #c471f5;
     color: #ffffff;
+    box-shadow: 0 0 10px rgba(196, 113, 245, 0.5); /* Effet néon au survol */
     transform: translateY(-2px);
 }
-
 /* Correction pour les icônes dans les listes de veille */
 .custom-list li i {
     color: #00bcd4;
