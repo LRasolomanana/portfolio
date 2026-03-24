@@ -6,6 +6,83 @@
     <title>Veille Quantique | Léo Rasolomanana</title>
     <link href="CSS/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <style>
+    /* Styles spécifiques pour la page veille - Thème Sombre */
+    body {
+        background-color: #000; /* Fond de page noir */
+        color: #fff; /* Texte de base en blanc */
+        font-family: sans-serif;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 25px 0;
+    }
+
+    /* Correction des boites : Fond sombre pour que le texte blanc soit visible */
+    .info-box-tech {
+        background: #1a1a1a; /* Gris très foncé comme sur l'image */
+        border-left: 5px solid #76b900;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Couleur du titre des boites (Vert NVIDIA) */
+    .info-box-tech h4 { 
+        color: #76b900; 
+        margin-top: 0; 
+        display: flex; 
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    /* Couleur du texte à l'intérieur des boites */
+    .info-box-tech p {
+        color: #e0e0e0; 
+    }
+    
+    .summary-box {
+        background: #111;
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        margin: 40px 0;
+        border: 1px solid #333;
+        border-bottom: 4px solid #76b900;
+    }
+    .summary-box h3 { color: #76b900; margin-top: 0; }
+
+    /* Correction de la section sources */
+    .sources-section {
+        background: #1a1a1a; /* Fond sombre */
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        color: #fff;
+    }
+
+    .source-link {
+        display: inline-block;
+        background: #333; /* Boutons gris foncé */
+        padding: 8px 15px;
+        margin: 5px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.85em;
+        transition: 0.3s;
+    }
+    .source-link:hover { background: #76b900; color: white; }
+    
+    .custom-list { list-style: none; padding-left: 0; }
+    .custom-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+    .custom-list li::before { content: "▹"; color: #76b900; position: absolute; left: 0; font-weight: bold; }
+
+    h1, h3 { color: #fff; }
+</style>
 </head>
 <body>
     <header>
@@ -20,32 +97,53 @@
     <section style="margin-top: 100px;">
         <div class="container">
             <h1><i class="fas fa-microchip"></i> Simulation Quantique : NVIDIA cuQuantum</h1>
-            <p class="intro">Comment les processeurs graphiques (GPU) permettent aujourd'hui d'anticiper la révolution de demain.</p>
+            <p class="intro">Comment les processeurs graphiques (GPU) permettent aujourd'hui d'anticiper la révolution de demain (Veille 2024-2026).</p>
             
             <div class="veille-content">
-                <h3><i class="fas fa-info-circle"></i> Problématique</h3>
-                <p>L'ordinateur quantique promet de résoudre des problèmes impossibles pour les machines actuelles. Cependant, le matériel est encore instable. Ma veille porte sur la solution <strong>NVIDIA cuQuantum</strong>, qui permet de simuler ces circuits quantiques sur des supercalculateurs classiques.</p>
+                
+                <h3><i class="fas fa-info-circle"></i> Problématique de veille</h3>
+                <p>L'ordinateur quantique promet de résoudre des problèmes impossibles pour les machines actuelles. Cependant, le matériel physique est encore instable. Ma veille porte sur la solution <strong>NVIDIA cuQuantum</strong> : un SDK qui transforme la puissance de calcul parallèle des GPU en simulateur de pointe.</p>
 
-                <h3><i class="fas fa-tools"></i> Méthodologie de veille</h3>
-                <ul class="custom-list">
-                    <li><strong>Outils :</strong> Feedly (Agrégateur RSS), Google Scholar, Blog technique NVIDIA.</li>
-                    <li><strong>Sources :</strong> Medium (Towards Data Science), Documentation officielle NVIDIA, YouTube (Conférences GTC).</li>
-                </ul>
+                <div class="info-grid">
+                    <div class="info-box-tech">
+                        <h4><i class="fas fa-layer-group"></i> cuStateVec</h4>
+                        <p>Simulateur de <strong>vecteur d'état</strong>. Il calcule l'état complet du système pour une précision absolue. Crucial pour tester de nouveaux algorithmes sur 30 à 50 qubits.</p>
+                    </div>
+                    <div class="info-box-tech">
+                        <h4><i class="fas fa-network-wired"></i> cuTensorNet</h4>
+                        <p>Basé sur les <strong>réseaux de tenseurs</strong>. Permet de simuler des circuits massifs de plusieurs centaines de qubits en optimisant les chemins de calcul.</p>
+                    </div>
+                </div>
 
-                <div class="info-box">
-                    <h3>Points Clés</h3>
-                    <ul>
-                        <li><strong>Accélération :</strong> cuQuantum permet d'accélérer les simulations jusqu'à 10x par rapport aux CPUs.</li>
-                        <li><strong>Accessibilité :</strong> Permet aux développeurs de tester des algorithmes (Shor, Grover) sans posséder d'ordinateur quantique physique.</li>
-                        <li><strong>Enjeu :</strong> Préparer la transition vers la cryptographie post-quantique.</li>
+                <h3><i class="fas fa-vial"></i> Pourquoi cette technologie ?</h3>
+                <p>NVIDIA crée un pont hybride. Grâce à <strong>CUDA-Q</strong>, les développeurs peuvent mixer code classique (CPU), IA (GPU) et Quantique (Simulateur) dans un même flux de travail. Cela permet de préparer la transition vers la <strong>cryptographie post-quantique</strong> et la recherche médicale sans attendre la maturité du hardware quantique.</p>
+
+                <div class="summary-box">
+                    <h3><i class="fas fa-lightbulb"></i> Conclusion & Analyse</h3>
+                    <p>Ma veille démontre que NVIDIA ne se contente pas de dominer l'IA. En rendant le quantique "logiciel", ils démocratisent l'accès à cette technologie via le <strong>NVIDIA Quantum Cloud</strong>. L'enjeu n'est plus seulement de construire une machine, mais de maîtriser l'écosystème qui la fera fonctionner.</p>
+                    <ul class="custom-list" style="color: #ddd;">
+                        <li><strong>Impact :</strong> Accélération x10 par rapport au calcul CPU traditionnel.</li>
+                        <li><strong>Marché :</strong> Intégration majeure avec IBM Qiskit et Google Cirq.</li>
                     </ul>
+                </div>
+
+                <h3><i class="fas fa-search"></i> Méthodologie & Sources</h3>
+                <div class="sources-section">
+                    <p><strong>Outils :</strong> Feedly (Agrégateur RSS), Google Scholar, Alertes Google.</p>
+                    <div class="sources-links">
+                        <strong>Flux de veille actif :</strong>
+                        <a href="https://developer.nvidia.com/cuquantum-sdk" target="_blank" class="source-link">NVIDIA Dev Blog</a>
+                        <a href="https://quantumcomputingreport.com/" target="_blank" class="source-link">Quantum Computing Report</a>
+                        <a href="https://arxiv.org/" target="_blank" class="source-link">arXiv (Publications Scientifiques)</a>
+                        <a href="https://github.com/NVIDIA/cuQuantum" target="_blank" class="source-link">Dépôts GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Léo Rasolomanana - Veille Technologique</p>
+        <p>&copy; 2026 Léo Rasolomanana - Veille Technologique & Stratégique</p>
     </footer>
 </body>
 </html>
