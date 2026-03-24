@@ -161,8 +161,8 @@ ul.doc-list li, ul.custom-list li {
     gap: 15px;
 }
 
-a { color: #00bcd4; text-decoration: none; transition: 0.3s; }
-a:hover { color: #fa71cd; }
+a { color: #7700ff; text-decoration: none; transition: 0.3s; }
+a:hover { color: #4400ff; }
 
 /* FOOTER */
 footer {
