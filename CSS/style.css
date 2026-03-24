@@ -308,3 +308,48 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
+
+/* Section BTS SIO simplifiée */
+.sio-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Pour le mobile */
+}
+
+.sio-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.sio-card:hover {
+    transform: translateY(-5px);
+}
+
+.sio-card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+/* Mise en avant de ton option */
+.sio-card.highlight {
+    border: 2px solid #2ecc71;
+    background: #f0fff4;
+}
+
+/* Style spécial Cyber */
+.sio-card.cyber {
+    background: #2c3e50;
+    color: white;
+}
+
+.sio-card.cyber i {
+    color: #e74c3c;
+}
